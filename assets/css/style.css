@@ -10,7 +10,7 @@
   --accent-contrast: #fff;
   --bright: #ea580c;
   --border: #e0d8cb;
-  --sidebar-bg: #1e1913
+  --sidebar-bg: #1e1913;
   --sidebar-text: #f5efe6;
   --sidebar-muted: #c9bfaf;
   --grid: rgb(20 18 16 / 0.05);
@@ -22,15 +22,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #201b15
-    --bg-soft: #2b251d
+    --bg: #201b15;
+    --bg-soft: #2b251d;
     --text: #f2ebe2;
     --muted: #c4b8ab;
     --accent: #f2a65a;
-    --accent-contrast: #201b15
+    --accent-contrast: #201b15;
     --bright: #ea580c;
-    --border: #4a4234
-    --sidebar-bg: #14110d
+    --border: #4a4234;
+    --sidebar-bg: #14110d;
     --sidebar-text: #f5efe6;
     --sidebar-muted: #c9bfaf;
     --grid: rgb(242 235 226 / 0.05);
@@ -47,7 +47,7 @@ html[data-theme="light"] {
   --accent-contrast: #fff;
   --bright: #ea580c;
   --border: #e0d8cb;
-  --sidebar-bg: #1e1913
+  --sidebar-bg: #1e1913;
   --sidebar-text: #f5efe6;
   --sidebar-muted: #c9bfaf;
   --grid: rgb(20 18 16 / 0.05);
@@ -55,15 +55,15 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #201b15
-  --bg-soft: #2b251d
+  --bg: #201b15;
+  --bg-soft: #2b251d;
   --text: #f2ebe2;
   --muted: #c4b8ab;
   --accent: #f2a65a;
-  --accent-contrast: #201b15
+  --accent-contrast: #201b15;
   --bright: #ea580c;
-  --border: #4a4234
-  --sidebar-bg: #14110d
+  --border: #4a4234;
+  --sidebar-bg: #14110d;
   --sidebar-text: #f5efe6;
   --sidebar-muted: #c9bfaf;
   --grid: rgb(242 235 226 / 0.05);
