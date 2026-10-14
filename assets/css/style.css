@@ -103,7 +103,9 @@ body {
 ::selection { background: var(--bright); color: #161310; }
 
 h1, h2, h3 { line-height: 1.15; text-wrap: balance; font-family: var(--font-display); font-weight: 700; }
-h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); margin: 0 0 0.5rem; letter-spacing: -0.01em; white-space: nowrap; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); margin: 0 0 0.5rem; letter-spacing: -0.01em; white-space: nowrap; }
+.bio-heading { margin: 0 0 1.5rem; }
+.bio-heading .role { margin: 0; }
 h1 .accent-word { font-style: italic; color: var(--accent); }
 h2 { font-size: clamp(1.8rem, 3vw, 2.3rem); margin: 0 0 1.25rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--bright); }
 h3 { font-size: 1.3rem; margin: 0 0 0.35rem; }
