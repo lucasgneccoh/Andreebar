@@ -22,17 +22,17 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #101614;
-    --bg-soft: #1a221f;
+    --bg: #1b2422;
+    --bg-soft: #24312d;
     --text: #e8eceb;
     --muted: #b6c0bd;
     --accent: #4ad69b;
     --accent-contrast: #06231b;
-    --border: #2c3632;
-    --header-bg: #072a20;
+    --border: #3a4841;
+    --header-bg: #0a3328;
     --header-text: #f2f5f4;
     --header-rule: #35c48d;
-    --footer-bg: #072a20;
+    --footer-bg: #0a3328;
     --footer-text: #b9c6c1;
     --footer-link: #7dd3ae;
   }
@@ -57,17 +57,17 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #101614;
-  --bg-soft: #1a221f;
+  --bg: #1b2422;
+  --bg-soft: #24312d;
   --text: #e8eceb;
   --muted: #b6c0bd;
   --accent: #4ad69b;
   --accent-contrast: #06231b;
-  --border: #2c3632;
-  --header-bg: #072a20;
+  --border: #3a4841;
+  --header-bg: #0a3328;
   --header-text: #f2f5f4;
   --header-rule: #35c48d;
-  --footer-bg: #072a20;
+  --footer-bg: #0a3328;
   --footer-text: #b9c6c1;
   --footer-link: #7dd3ae;
 }
@@ -99,8 +99,8 @@ body {
 ::selection { background: var(--accent); color: var(--accent-contrast); }
 
 h1, h2, h3 { line-height: 1.25; text-wrap: balance; font-family: var(--font-display); font-weight: 700; }
-h1 { font-size: 2.3rem; margin: 0 0 0.25rem; letter-spacing: 0.005em; }
-h2 { font-size: 1.65rem; margin: 0 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); }
+h1 { font-size: 2.3rem; margin: 0 0 0.25rem; letter-spacing: 0.005em; white-space: nowrap; }
+h2 { font-size: 1.65rem; margin: 0 0 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--accent); letter-spacing: 0.01em; }
 h3 { font-size: 1.2rem; margin: 0 0 0.35rem; }
 
 p { margin: 0 0 1rem; }
@@ -136,8 +136,20 @@ a:hover { text-decoration-thickness: 2px; }
   padding: 0 1.25rem;
 }
 
+/* Faint dot texture in dark mode so the background feels less flat black */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body {
+    background-image: radial-gradient(rgb(255 255 255 / 0.05) 1.2px, transparent 1.3px);
+    background-size: 24px 24px;
+  }
+}
+html[data-theme="dark"] body {
+  background-image: radial-gradient(rgb(255 255 255 / 0.05) 1.2px, transparent 1.3px);
+  background-size: 24px 24px;
+}
+
 main { padding-bottom: 3rem; }
-section { padding-top: 2.5rem; }
+section { padding-top: 3rem; }
 
 /* Header */
 .site-header {
@@ -234,7 +246,7 @@ section { padding-top: 2.5rem; }
   color: var(--text);
   text-decoration: none;
 }
-.social a:hover { border-color: var(--accent); color: var(--accent); }
+.social a:hover { border-color: var(--accent); background: var(--accent); color: var(--accent-contrast); }
 .social svg { width: 1rem; height: 1rem; flex: none; }
 
 .button {
@@ -246,6 +258,7 @@ section { padding-top: 2.5rem; }
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
   border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
 }
 .button:hover { filter: brightness(0.92); color: var(--accent-contrast); text-decoration: none; }
 .button.secondary { background: none; color: var(--accent); }
@@ -273,8 +286,10 @@ section { padding-top: 2.5rem; }
 .entry-list { list-style: none; margin: 0; padding: 0; display: grid; }
 .entry {
   border-top: 1px solid var(--border);
-  padding: 1.3rem 0.25rem;
+  padding: 1.5rem 0.5rem;
+  transition: background-color 0.15s ease;
 }
+.entry:hover { background: var(--bg-soft); }
 .entry-list > li:last-child .entry { border-bottom: 1px solid var(--border); }
 .entry header { margin-bottom: 0.4rem; }
 .entry .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
@@ -383,7 +398,7 @@ details.abstract div { margin-top: 0.5rem; }
   h1, h2, h3 { font-family: var(--font-display); }
   h2 { border-bottom-color: #000; }
   a { color: #000; }
-  .button, .button.secondary { border-color: #000; color: #000; background: none; }
+  .button, .button.secondary { border-color: #000; color: #000; background: none; box-shadow: none; }
   .entry, .entry-list > li:last-child .entry { border-color: #999; }
   main a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; word-break: break-all; }
   .site-footer { background: #fff; color: #000; border-top: 1px solid #999; }
