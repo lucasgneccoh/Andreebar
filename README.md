@@ -14,8 +14,8 @@ python3 -m http.server 8000
 Then open <http://localhost:8000> in a browser.
 
 Any static file server works. Opening `index.html` directly also works,
-except the `/experience/` URL needs a server (or open
-`experience/index.html` directly).
+except the `/experience/` and `/talks/` URLs need a server (or open
+`experience/index.html` and `talks/index.html` directly).
 
 ## Deploy
 
@@ -26,12 +26,13 @@ Push to the connected Netlify site (or any static host / GitHub Pages):
 
 ## Website structure
 
-There are only a few files, and you only ever need to edit two of them:
+There are only a few files, and content lives in three of them:
 
 | File / folder | What it is | Do you need to touch it? |
 |---|---|---|
-| `index.html` | Homepage: bio, publications, talks | **Yes — this is where new content goes** |
-| `experience/index.html` | CV page: education, languages, interests | **Yes, when these change** |
+| `index.html` | Homepage: bio, publications, teaching | **Yes — new papers and teaching go here** |
+| `talks/` | Talks page: conference talks, seminars, posters | **Yes — new talks go here** |
+| `experience/` | CV page: education, languages, interests | **Yes, when these change** |
 | `uploads/` | `resume.pdf` (Download CV button) and talk poster PDFs | Only to replace/add PDFs |
 | `assets/img/me.jpg` | Portrait photo on the homepage | Only to change the photo |
 | `assets/css/style.css` | All styling (colors, layout, light/dark mode) | No, unless you want a new look |
@@ -41,11 +42,11 @@ There are only a few files, and you only ever need to edit two of them:
 
 How the pages link together:
 
-- The top menu has **Bio** (homepage top), **Papers** (homepage `#papers`
-  section), **CV** (the `experience/` page), and **Talks** (homepage
-  `#talks` section).
-- Talks and publications live directly on the homepage — there are no
-  separate pages per talk or paper, so everything is updated in one file.
+- The menu has **Bio** (homepage top), **Papers** (homepage `#papers`
+  section), **Teaching** (homepage `#teaching` section), **Talks** (the
+  `talks/` page), and **CV** (the `experience/` page).
+- Papers and teaching live directly on the homepage; talks and the CV each
+  have their own page.
 
 ---
 
@@ -61,10 +62,10 @@ General workflow for every change below:
 
 ### Add a new talk
 
-1. Open `index.html` and find the `Recent & Upcoming Talks` section
-   (`<h2 id="talks-heading">`).
+1. Open `talks/index.html` and find the `<ol class="entry-list">` under
+   the `Talks` heading.
 2. Talks are listed **newest first** — paste the block below as the first
-   `<li>` inside the `<ol class="entry-list">` right after that heading.
+   `<li>` inside that list.
 3. Replace the date, titles, location, and link. Delete the
    `<span class="badge">Upcoming</span>` line for past talks, and delete
    the whole `<details>...</details>` block if the talk has no abstract.
@@ -96,8 +97,32 @@ Notes:
 - The `datetime="2026-09-10"` value must be a full date in `YYYY-MM-DD`
   format; the visible text (`Sep 2026`) can be anything readable.
 - To attach slides or a poster, put the PDF in `uploads/` (e.g.
-  `uploads/my-talk-slides.pdf`) and add another link line:
-  `<li><a href="uploads/my-talk-slides.pdf">Slides (PDF)</a></li>`
+  `uploads/my-talk-slides.pdf`) and add another link line **starting with
+  `../`** (because this page lives in a subfolder):
+  `<li><a href="../uploads/my-talk-slides.pdf">Slides (PDF)</a></li>`
+
+### Add a teaching entry
+
+1. Open `index.html` and find the `Teaching` section
+   (`<h2 id="teaching-heading">`).
+2. Entries are listed **newest first** — paste the block below as the
+   first `<li>` inside that `<ol class="entry-list">`.
+3. Replace the date, title, and description.
+
+```html
+<li>
+  <article class="entry" aria-labelledby="teach-myslug">
+    <div class="talk-top">
+      <time datetime="2025-09-01">Fall 2025</time>
+      <h3 id="teach-myslug">Course or activity title</h3>
+    </div>
+    <p class="meta">University, City · Role (e.g. Teaching assistant, Lecturer) · Level</p>
+  </article>
+</li>
+```
+
+As with talks, `aria-labelledby` and the `<h3 id>` must match
+(e.g. `teach-probability`), and `datetime` uses `YYYY-MM-DD` format.
 
 ### Add a new publication
 
@@ -129,8 +154,8 @@ Notes:
 ### Edit the bio text
 
 Open `index.html`, find the two `<p>...</p>` paragraphs right after the
-portrait photo (before the `Download CV` button), and edit the text.
-To add a link inside the bio, use:
+portrait photo (before the `My research in plain words` heading), and edit
+the text. To add a link inside the bio, use:
 
 ```html
 <a href="https://example.com" rel="noopener">link text</a>
@@ -173,14 +198,14 @@ On the CV page (`experience/index.html`), find
 ### Replace the CV (PDF)
 
 Replace the file `uploads/resume.pdf` with the new PDF, keeping the same
-file name — the `Download CV` buttons on both pages point to it, so no
-HTML change is needed.
+file name — the `Download CV` buttons on the homepage and CV page point
+to it, so no HTML change is needed.
 
 ### Replace the portrait photo
 
 Replace `assets/img/me.jpg` with the new photo, keeping the same file
-name. A square-ish portrait works best; it is displayed cropped to a
-circle. Also update the `alt="Portrait of ..."` text on the `<img>` line
+name. A portrait-orientation photo works best; it is displayed in an arch
+frame. Also update the `alt="Portrait of ..."` text on the `<img>` line
 in `index.html` if the subject changes.
 
 ### Change contact / profile links
