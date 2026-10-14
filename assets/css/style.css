@@ -266,6 +266,7 @@ section { padding-top: 3rem; }
 
 /* Two-column info blocks */
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.bio > *, .columns > * { min-width: 0; }
 
 .tag-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .tag-list li {
@@ -365,8 +366,12 @@ details.abstract div { margin-top: 0.5rem; }
 
 @media (max-width: 40rem) {
   body { font-size: 1rem; }
-  h1 { font-size: 1.8rem; }
+  h1 { font-size: 1.7rem; }
   h2 { font-size: 1.4rem; }
+  .site-title { font-size: 1.05rem; }
+  .header-inner { gap: 0.75rem; }
+  .site-header > .container { padding-left: 1rem; padding-right: 1rem; }
+  .theme-button span { display: none; }
 
   .menu-button { display: inline-flex; }
   .site-nav {
