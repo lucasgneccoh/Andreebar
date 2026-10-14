@@ -1,248 +1,197 @@
-# [The Academic CV That Gets You Hired](https://github.com/HugoBlox/hugo-theme-academic-cv)
+# Personal website of Andrée Barnier
 
-[![Screenshot](.github/preview.webp)](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=preview)
+A plain static website: hand-written HTML + CSS + a small vanilla-JS file.
+No Hugo, no Node, no frameworks, no CDN dependencies, no build step, no trackers.
 
-<!-- TODO: Replace with a short demo video showing Hugo Chat generating an academic profile page -->
-<!-- https://github.com/user-attachments/assets/REPLACE_ME -->
+## Preview locally
 
-<h1 align="center">The Portfolio That Works While You Sleep</h1>
+From the repository root:
 
-<p align="center">
-  <strong>Your unfair advantage in academia.</strong><br/>
-  Stop sending PDFs into the void. Build a living portfolio that boosts citations, attracts collaborators, and lands offers — all from simple Markdown files you own.<br/>
-  Built on <a href="https://github.com/HugoBlox/kit">HugoBlox</a> — the open-source framework where AI generates your pages and you own everything as Markdown.
-</p>
-
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_top"><b>Deploy Free (60s)</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_top_academic-cv"><b>Customize with AI</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=demo">Live Demo</a>
-</p>
-
-<div align="center">
-
-  <a href="https://github.com/HugoBlox/hugo-theme-academic-cv">
-    <img src="https://img.shields.io/github/stars/HugoBlox/hugo-theme-academic-cv?label=Star&logo=github&style=flat-square&color=181717" alt="GitHub Stars">
-  </a>
-  <a href="https://discord.gg/z8wNYzb">
-    <img src="https://img.shields.io/discord/722225264733716590?label=Discord&logo=discord&logoColor=white&style=flat-square&color=5865F2" alt="Discord">
-  </a>
-  <a href="https://github.com/HugoBlox/kit">
-    <img src="https://img.shields.io/github/stars/HugoBlox/kit?label=HugoBlox&logo=github&style=flat-square&color=181717" alt="HugoBlox Stars">
-  </a>
-
-</div>
-
-<p align="center">
-  <sub>Part of the <a href="https://github.com/HugoBlox/kit"><strong>HugoBlox</strong></a> ecosystem · Trusted by <strong>150,000+</strong> researchers at <strong>MIT, Stanford, Google & NVIDIA</strong> · Rated <strong>4.9/5</strong> (official survey) · Since <strong>2016</strong></sub>
-</p>
-
----
-
-## Why This Template?
-
-Most academic CVs are static PDFs that get lost in the pile. This is an **always-on portfolio** that works 24/7 to advance your career:
-
-- **Students & grads** applying to top labs and industry roles — stand out with a living portfolio, not a flat PDF
-- **Researchers** who want a citable online presence with publications, projects, and talks in one place
-- **Faculty & PIs** showcasing their lab, group news, and team members
-- **Anyone with publications** who wants auto-imported citations from BibTeX/DOI without manual formatting
-
-> *"My citations went up 3x after switching to this template. Colleagues started finding my work through Google Scholar links back to my site. The BibTeX auto-sync is a lifesaver."*
-> — **Dr. Li Zhang**, AI Research Scientist
-
-> *"I set this up during a weekend and my PhD students had their profiles live by Monday. They just edit Markdown — no tickets to IT, no WordPress logins."*
-> — **Prof. Sarah Chen**, Computer Science, ETH Zürich
-
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_mid">
-    <img src="https://img.shields.io/badge/⚡️%20Deploy%20Your%20CV%20in%2060s-7c3aed?style=for-the-badge" alt="Deploy this template" width="400">
-  </a>
-</p>
-
----
-
-## Features
-
-| Feature | Benefit |
-| :--- | :--- |
-| **BibTeX / DOI auto-import** | Drop in a `.bib` file — publication pages generated automatically with proper citations. |
-| **Jupyter & RMarkdown** | Publish `.ipynb` notebooks as beautiful posts — code, outputs, and narrative intact. |
-| **LaTeX math** | Native rendering for equations and technical writing. |
-| **Markdown slides** | Present with reveal.js — math, syntax highlighting, diagrams, speaker notes. |
-| **SEO & AI-ready** | Optimized for search engines and LLMs — your work gets found, cited, and recommended. |
-| **AI page generation** | Describe what you need to [Hugo Chat](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=features_academic-cv) — get structured pages with correct front matter instantly. |
-| **Visual editor** | Drag-and-drop blocks in VS Code with [Ownable CMS](https://marketplace.visualstudio.com/items?itemName=ownable.ownable). No coding needed. |
-| **Plain Markdown** | Every file is human-readable. No database, no lock-in, take your content anywhere. |
-| **Free hosting** | Deploy to GitHub Pages, Netlify, Vercel, or Cloudflare — all free tier. |
-
----
-
-## 🚀 Get Started
-
-### Step 1: Deploy Your Site
-
-**Option A: Launch in browser** (fastest — no install needed)
-
-> [!TIP]
-> Deploy a live site in 60 seconds — no software to install:
-> [**Deploy Academic CV free**](https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=get_started)
-
-**Option B: Use the CLI**
-
-```bash
-# Requires Hugo Extended & Node.js
-npx hugoblox create site --template academic-cv
+```sh
+python3 -m http.server 8000
 ```
 
-### Step 2: Customize With AI + Visual Editing
+Then open <http://localhost:8000> in a browser.
 
-<table>
-<tr>
-<td width="50%">
+Any static file server works. Opening `index.html` directly also works,
+except the `/experience/` URL needs a server (or open
+`experience/index.html` directly).
 
-**✨ Hugo Chat** — AI customization
+## Deploy
 
-Tell Hugo Chat what you want in plain English. It generates structured pages with the right front matter, shortcodes, and blocks for this template.
-
-> *"Add a publications page with my 2024 papers from this BibTeX file"*
-
-[**Try Hugo Chat — free**](https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=step2_academic-cv)
-
-</td>
-<td width="50%">
-
-**Ownable CMS** — visual editing in VS Code
-
-1. Install [Ownable CMS](https://marketplace.visualstudio.com/items?itemName=ownable.ownable)
-2. Open your project in VS Code
-3. Click the Ownable icon to start editing visually
-
-</td>
-</tr>
-</table>
-
-![Ownable CMS in Action](https://raw.githubusercontent.com/HugoBlox/kit/main/.github/media/studio/slide-1.webp)
-*Ownable CMS: Drag-and-drop page builder inside VS Code.*
-
-> [!NOTE]
-> **New to Hugo?** No problem. You don't need to know Hugo — edit visually or write Markdown. Hugo is the engine under the hood that makes your site fast, secure, and free to host. [Learn more →](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=docs_academic-cv)
+Push to the connected Netlify site (or any static host / GitHub Pages):
+`netlify.toml` publishes the repository root with no build command.
 
 ---
 
-## 💎 Go Premium
+## Website structure
 
-Love the free version? **Academic CV Pro** and **Resume Pro** take it further:
+There are only a few files, and you only ever need to edit two of them:
 
-- Premium designs that make an unforgettable first impression
-- Advanced timeline and layout options
-- Full-featured course/lecture sections
-- Remove attribution, priority support
+| File / folder | What it is | Do you need to touch it? |
+|---|---|---|
+| `index.html` | Homepage: bio, publications, talks | **Yes — this is where new content goes** |
+| `experience/index.html` | CV page: education, languages, interests | **Yes, when these change** |
+| `uploads/` | `resume.pdf` (Download CV button) and talk poster PDFs | Only to replace/add PDFs |
+| `assets/img/me.jpg` | Portrait photo on the homepage | Only to change the photo |
+| `assets/css/style.css` | All styling (colors, layout, light/dark mode) | No, unless you want a new look |
+| `assets/js/main.js` | Mobile menu, theme toggle, footer year | No — works as-is |
+| `404.html` | "Page not found" page | No |
+| `netlify.toml` | Tells Netlify "publish this folder, no build" | No |
 
-| | **Academic CV** (Free) | **Academic CV Pro** |
-| :--- | :---: | :---: |
-| Design | Professional & clean | **Premium designs** |
-| Layouts | Standard sections | **Advanced timelines** |
-| Courses/lectures | Basic | **Full-featured** |
-| Support | Community | **Priority** |
+How the pages link together:
 
-<p align="center">
-  <a href="https://hugoblox.com/pricing?utm_source=github&utm_medium=readme&utm_content=premium_academic-cv"><b>Compare plans</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/academic-cv-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_academic-cv"><b>Deploy Academic CV Pro</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugoblox.com/templates/resume-pro?utm_source=github&utm_medium=readme&utm_content=premium_deploy_resume"><b>Deploy Resume Pro</b></a>
-</p>
-
----
-
-## 🏆 Why HugoBlox?
-
-> *Why not just use WordPress, Webflow, or an AI builder like Lovable?*
-
-| | **AI builders** (Lovable, v0) | **CMS platforms** (WordPress, Webflow) | **HugoBlox** |
-| :--- | :---: | :---: | :---: |
-| AI generates your pages | Yes | No | **Yes** |
-| You own the output as readable files | No — React code | No — database | **Yes — Markdown** |
-| Free to host forever | No | No | **Yes** |
-| Human-editable without the tool | Barely | No | **Yes — it's Markdown** |
-| Open source | No | No | **Yes — MIT licensed** |
-
-> [!IMPORTANT]
-> Your content is plain Markdown files. No lock-in, no database, no vendor dependency. If you ever want to leave, take your files and go.
+- The top menu has **Bio** (homepage top), **Papers** (homepage `#papers`
+  section), **CV** (the `experience/` page), and **Talks** (homepage
+  `#talks` section).
+- Talks and publications live directly on the homepage — there are no
+  separate pages per talk or paper, so everything is updated in one file.
 
 ---
 
-## FAQ
+## How to add or update content
 
-<details>
-<summary><b>Do I need to know Hugo?</b></summary>
-No. Edit visually with Ownable CMS or write Markdown. Hugo is the build engine — you don't need to touch it.
-</details>
+General workflow for every change below:
 
-<details>
-<summary><b>Can I import my existing publications?</b></summary>
-Yes. Drop a BibTeX file and publication pages are generated automatically with proper citations, metadata, and links.
-</details>
+1. Open the file in any text editor.
+2. Make the change, save the file.
+3. Preview with `python3 -m http.server 8000` and open
+   <http://localhost:8000>.
+4. If it looks good, commit and push to publish.
 
-<details>
-<summary><b>Can I host for free?</b></summary>
-Yes. GitHub Pages, Netlify, Vercel, and Cloudflare Pages all have free tiers for static sites.
-</details>
+### Add a new talk
 
-<details>
-<summary><b>Can I migrate my content later?</b></summary>
-Yes. Your site is just Markdown files in a folder. Copy them anywhere.
-</details>
+1. Open `index.html` and find the `Recent & Upcoming Talks` section
+   (`<h2 id="talks-heading">`).
+2. Talks are listed **newest first** — paste the block below as the first
+   `<li>` inside the `<ol class="entry-list">` right after that heading.
+3. Replace the date, titles, location, and link. Delete the
+   `<span class="badge">Upcoming</span>` line for past talks, and delete
+   the whole `<details>...</details>` block if the talk has no abstract.
 
-<details>
-<summary><b>What's Hugo Chat?</b></summary>
-An AI assistant trained on Hugo and HugoBlox docs. Describe what you want and it generates the right pages with correct front matter. <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=faq_academic-cv">Free to try.</a>
-</details>
+```html
+<li>
+  <article class="entry" aria-labelledby="talk-myslug">
+    <div class="talk-top">
+      <time datetime="2026-09-10">Sep 2026</time>
+      <h3 id="talk-myslug">Full title of the talk or event</h3>
+      <span class="badge">Upcoming</span>
+    </div>
+    <p class="meta">City, Country · One-line description (e.g. Poster, Invited talk)</p>
+    <details class="abstract">
+      <summary>Abstract</summary>
+      <div><p>Abstract text here.</p></div>
+    </details>
+    <ul class="entry-links">
+      <li><a href="https://event-website.example" rel="noopener">Event website</a></li>
+    </ul>
+  </article>
+</li>
+```
 
-<details>
-<summary><b>Can I cancel Pro anytime?</b></summary>
-Yes. No questions asked.
-</details>
+Notes:
 
----
+- `aria-labelledby="talk-myslug"` and the `<h3 id="talk-myslug">` must use
+  the same unique id (use the event acronym in lowercase, e.g. `talk-jps`).
+- The `datetime="2026-09-10"` value must be a full date in `YYYY-MM-DD`
+  format; the visible text (`Sep 2026`) can be anything readable.
+- To attach slides or a poster, put the PDF in `uploads/` (e.g.
+  `uploads/my-talk-slides.pdf`) and add another link line:
+  `<li><a href="uploads/my-talk-slides.pdf">Slides (PDF)</a></li>`
 
-<h2 align="center">🚀 Ready to launch?</h2>
+### Add a new publication
 
-<p align="center">
-  Deploy in 60 seconds. Customize with AI. Own it as Markdown forever.
-</p>
+1. Open `index.html` and find the `Recent Publications` section
+   (`<h2 id="papers-heading">`).
+2. Publications are listed **newest first** — paste the block below as the
+   first `<li>` inside that `<ol class="entry-list">`.
+3. Replace title, authors, date, identifier, abstract, and links. Remove any
+   link line you don't need (e.g. no DOI yet).
 
-<p align="center">
-  <a href="https://hugoblox.com/templates/academic-cv?utm_source=github&utm_medium=readme&utm_content=cta_final"><b>Deploy Academic CV — free</b></a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="https://hugo.chat/?utm_source=github&utm_medium=readme&utm_content=cta_final_academic-cv"><b>Customize with AI</b></a>
-</p>
+```html
+<li>
+  <article class="entry">
+    <header>
+      <h3>Title of the paper</h3>
+      <p class="authors">First Author, Second Author</p>
+      <p class="meta">Preprint · <time datetime="2026-03-01">1 March 2026</time> · arXiv:0000.00000</p>
+    </header>
+    <p>Abstract text here.</p>
+    <ul class="entry-links">
+      <li><a href="https://arxiv.org/pdf/0000.00000" rel="noopener">PDF</a></li>
+      <li><a href="https://doi.org/10.0000/example" rel="noopener">DOI</a></li>
+      <li><a href="https://arxiv.org/abs/0000.00000" rel="noopener">arXiv</a></li>
+    </ul>
+  </article>
+</li>
+```
 
----
+### Edit the bio text
 
-## Community & Support
+Open `index.html`, find the two `<p>...</p>` paragraphs right after the
+portrait photo (before the `Download CV` button), and edit the text.
+To add a link inside the bio, use:
 
-- 💬 [**Discord**](https://discord.gg/z8wNYzb) — ask questions, share your site
-- 📚 [**Docs**](https://docs.ownable.dev/?utm_source=github&utm_medium=readme&utm_content=community_academic-cv)
-- ⭐ [**Star HugoBlox**](https://github.com/HugoBlox/kit) — help others find it
-- 🐦 [**Follow on X**](https://x.com/GoOwnable)
+```html
+<a href="https://example.com" rel="noopener">link text</a>
+```
 
-### Sponsors
+### Edit interests
 
-[**❤️ Sponsor on GitHub**](https://github.com/sponsors/gcushen) | [**🏢 Become a Partner**](https://github.com/sponsors/gcushen)
+Interests appear in **two places** — keep them in sync:
 
----
+1. `index.html`: the `<ul class="tag-list">` under the `<h3>Interests</h3>`
+   heading near the bio.
+2. `experience/index.html`: the `<ul class="tag-list">` under the
+   `<h2 id="interests-heading">` heading.
 
-Copyright 2016-present [**Lore Labs**](https://lore.tech/?utm_source=github&utm_medium=readme).
-Released under the [MIT License](./LICENSE.md).
+Each interest is one `<li>...</li>` line.
 
-<p align="center">
-  <sub>HugoBlox is a trademark of Lore Labs.</sub>
-</p>
+### Edit education
 
-<!--START_SECTION:news-->
-<!--Updated at 2026-05-10T01:53:43.708Z-->
-<!--END_SECTION:news-->
+Education appears in **two places**:
+
+1. `index.html`: short version (degree, school, dates only).
+2. `experience/index.html`: full version, which may also include a
+   description paragraph and a button link.
+
+To add a degree, copy an existing `<li>...</li>` block inside the
+`<ul class="edu-list">` in **both files** (with the extra paragraph only
+in the CV page if needed). Degrees are listed newest first. Dates use
+`<time datetime="2022-10">October 2022</time>` (full month in
+`YYYY-MM` format for the `datetime` value).
+
+### Edit languages
+
+On the CV page (`experience/index.html`), find
+`<h2 id="languages-heading">`. Each language is one line:
+
+```html
+<li><span>French</span> <span class="level">Native</span></li>
+```
+
+### Replace the CV (PDF)
+
+Replace the file `uploads/resume.pdf` with the new PDF, keeping the same
+file name — the `Download CV` buttons on both pages point to it, so no
+HTML change is needed.
+
+### Replace the portrait photo
+
+Replace `assets/img/me.jpg` with the new photo, keeping the same file
+name. A square-ish portrait works best; it is displayed cropped to a
+circle. Also update the `alt="Portrait of ..."` text on the `<img>` line
+in `index.html` if the subject changes.
+
+### Change contact / profile links
+
+On the homepage (`index.html`), find `<ul class="social">`. Each `<li>`
+is one pill (Email, LinkedIn, Scholar, ORCID). To change a URL, edit the
+`href="..."` value; to remove one, delete its whole `<li>...</li>` block.
+
+### Change colors or fonts
+
+Open `assets/css/style.css` and edit the variables at the top (`--bg`,
+`--text`, `--accent`, ...). There are three sets: default (light), dark
+mode, and the explicit `data-theme` overrides — change a color in all
+three sets to keep light and dark modes consistent.
